@@ -16,4 +16,12 @@ public class MainActivity extends AppCompatActivity {
     public void testBaseView1(View view) {
         startActivity(new Intent(this,TestViewActivity1.class));
     }
+
+    public void testBaseView2(View view) {
+        startActivity(new Intent(this,TestViewActivity2.class));
+    }
+
+    public void testScollby(View view) {
+        startActivity(new Intent(this,TestScollByActivity.class));
+    }
 }

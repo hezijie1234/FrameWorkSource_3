@@ -16,7 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TestViewActivity1"></activity>
+        <activity android:name=".TestViewActivity1" />
+        <activity android:name=".TestViewActivity2" />
+        <activity android:name=".TestScollByActivity"></activity>
     </application>
 
 </manifest>

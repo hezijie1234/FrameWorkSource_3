@@ -1,6 +1,7 @@
 package com.zijie.customview;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class TextViewGroupOne extends ViewGroup {
         int childCount = getChildCount();
         for (int i = 0; i < childCount; i++) {
             View child = getChildAt(i);
-            //传递进入父布局的宽度特征，padding，子view的宽度
+            //传递进入父布局的宽度特征，padding，通过子View的LayoutParams获取到的子View的宽或高
             int childWidthSpec = getChildMeasureSpec(widthMeasureSpec, 0, child.getLayoutParams().width);
             int childHeightSpec = getChildMeasureSpec(heightMeasureSpec, 0, child.getLayoutParams().height);
             //测量子view的宽高
@@ -109,5 +110,50 @@ public class TextViewGroupOne extends ViewGroup {
             //不考虑margin和padding gravity,top是前一个子view的底部。
             top += childAt.getMeasuredHeight();
         }
+    }
+
+    @Override
+    protected boolean checkLayoutParams(ViewGroup.LayoutParams p) {
+        return super.checkLayoutParams(p);
+    }
+
+    @Override
+    protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
+        return super.generateDefaultLayoutParams();
+    }
+
+    @Override
+    protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
+        return super.generateLayoutParams(p);
+    }
+
+    @Override
+    public ViewGroup.LayoutParams generateLayoutParams(AttributeSet attrs) {
+        return super.generateLayoutParams(attrs);
+    }
+
+    public static class LayoutParams extends ViewGroup.MarginLayoutParams{
+
+        public LayoutParams(Context c, AttributeSet attrs) {
+            super(c, attrs);
+            TypedArray typedArray = c.obtainStyledAttributes(attrs, R.styleable.TextViewGroupOne_Layout);
+            int simpleAttr = typedArray.getInteger(R.styleable.TextViewGroupOne_Layout_layout_simple_attr, 0);
+            int gravity = typedArray.getInteger(R.styleable.TextViewGroupOne_Layout_android_layout_gravity, -1);
+            typedArray.recycle();
+        }
+
+        public LayoutParams(int width, int height) {
+            super(width, height);
+        }
+
+        public LayoutParams(MarginLayoutParams source) {
+            super(source);
+        }
+
+        public LayoutParams(ViewGroup.LayoutParams source) {
+            super(source);
+        }
+
+
     }
 }
