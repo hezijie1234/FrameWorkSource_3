@@ -29,7 +29,7 @@ public class TextViewGroupOne extends ViewGroup {
      * 测量完成之前使用child.getLayoutParams(),这个是子view向父布局请求的宽度，它的值可能是MATCH或WRAP，那么获取的就是相应的-1，-2。
      * childAt.getMeasuredWidth()这个是测量完成之后子view的实际高度，单位px
      *  child.getWidth()测量并且onLayout()执行完成之后子view实际大小单位px。
-     *
+     *  在onMeasure之后可以getMeasuredWidth,在Onlayout()之后 可以用getWitdth().
      * @param widthMeasureSpec
      * @param heightMeasureSpec
      */
