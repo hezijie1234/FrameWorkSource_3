@@ -23,6 +23,7 @@ public class TestScollByActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "移动前scrollTo: scrollx= " + root.getScrollX() + " scrollY= " + root.getScrollY());
+                //这是在移动画布，画布往负方向移动，view就相当于往正方向移动。
                 root.scrollTo(-50, -50);
                 Log.i(TAG, "移动后scrollTo: scrollx= " + root.getScrollX() + " scrollY= " + root.getScrollY());
             }
