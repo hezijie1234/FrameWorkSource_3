@@ -24,4 +24,8 @@ public class MainActivity extends AppCompatActivity {
     public void testScollby(View view) {
         startActivity(new Intent(this,TestScollByActivity.class));
     }
+
+    public void testFlowOver(View view) {
+        startActivity(new Intent(this,TestViewActivity3.class));
+    }
 }

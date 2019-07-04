@@ -3,8 +3,12 @@ package com.zijie.customview;
 import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
+import android.support.v4.view.ViewConfigurationCompat;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -23,23 +27,25 @@ public class HZJFlowLayout extends ViewGroup {
     private List<List<View>> lines;
 
     private List<Integer> lineLength;
+    //限制一个最小的距离，只有小于这个距离才能算是滑动
+    private int minSlopDistance;
+    //流式布局的内容的高度
+    private int realHeight;
 
     public HZJFlowLayout(Context context) {
-        super(context);
+        this(context,null);
     }
 
     public HZJFlowLayout(Context context, AttributeSet attrs) {
-        super(context, attrs);
+        this(context, attrs,0);
     }
 
     public HZJFlowLayout(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
+        minSlopDistance = ViewConfigurationCompat.getScaledPagingTouchSlop(viewConfiguration);
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public HZJFlowLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-    }
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
@@ -112,9 +118,94 @@ public class HZJFlowLayout extends ViewGroup {
         //在这里对子view中高度为match_parent的进行重新处理（按照同一行的其他子view的最大高度来计算）
         reMeasureChild(widthMeasureSpec,heightMeasureSpec);
 
+        isCanScorll = height > parentHeight;
+        realHeight = height;
         //这里需要重新测量父布局的宽度和高度
         setMeasuredDimension(widthMode == MeasureSpec.EXACTLY ? parentWidth : width,heightMode == MeasureSpec.EXACTLY ? parentHeight : height);
     }
+
+    private boolean isCanScorll = false;
+    private float startY = 0; //每次滑动的开始位置
+    /**
+     * 捕获滑动事件并进行处理，但是有限制的滑动才是被允许的：
+     *          1.当内容的高度大于流式布局的高度时需要滑动（这个需要在onMeasure中进行处理）。
+     *          2.当滑动到地步或者顶部时，我们需要作出判断，避免滑动过头了。
+     *
+     * @param event
+     * @return
+     */
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        Log.e(TAG, "onTouchEvent: " + isCanScorll );
+//        if (!isCanScorll){
+//            return super.onTouchEvent(event);
+//        }
+//        float currY = event.getY();
+//        switch (event.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                startY = event.getY();
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                float move = startY - currY;
+//                int scrollY = getScrollY();
+//                move = move + scrollY;
+//                if (move < 0){
+//                    move = 0;
+//                }
+//                if (move > realHeight - getMeasuredHeight()){
+//                    move = realHeight - getMeasuredHeight();
+//                }
+//                scrollTo(0, (int) move);
+//                startY = currY;
+//                break;
+//            case MotionEvent.ACTION_UP:
+//
+//                break;
+//        }
+//
+//        return super.onTouchEvent(event);
+//    }
+
+    public static final String TAG = "111";
+    private float  mLastX = 0;//上一个滑动事件结束的时候的x值
+    private float mLastY = 0; //上一个滑动事件结束的时候的y值
+    /**
+     * 我们先考虑什么时候需要拦截事件： 1.就是y轴的移动距离大于一个限定的最小值，我们才认为这是一个我们认可的滑动事件（把系统的滑动事件过滤）。
+     *                                  2.y轴的移动距离大于x轴的移动距离我们才认为他是一个y轴的滑动
+     * @param ev
+     * @return
+     */
+//    @Override
+//    public boolean onInterceptTouchEvent(MotionEvent ev) {
+//        float currentX = (int) ev.getX();
+//        float currentY = (int) ev.getY();
+//        boolean isIntceptor = false;
+//        switch (ev.getAction()){
+//            case MotionEvent.ACTION_DOWN:
+//                //按钮按下时给接下来的滑动事件赋予一个初始值
+//                mLastX = currentX;
+//                mLastY = currentY;
+//
+//                Log.e(TAG, "onInterceptTouchEvent:ACTION_DOWN " );
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                float moveX = Math.abs(currentX - mLastX);
+//                float moveY = Math.abs(currentY - mLastY);
+//                if (moveY > moveX && moveY > minSlopDistance){ //需要拦截事件，
+//                    isIntceptor = true;
+//                }
+//                Log.e(TAG, "onInterceptTouchEvent:ACTION_MOVE " );
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                Log.e(TAG, "onInterceptTouchEvent:ACTION_UP " );
+//                break;
+//        }
+//        //保存滑动完成后的坐标值，给下一个滑动当做开始值使用
+//        mLastY = currentY;
+//        mLastX = currentX;
+//        Log.e(TAG, "onInterceptTouchEvent: " + isIntceptor );
+//        return isIntceptor;
+//    }
 
     private void reMeasureChild(int widthMeasureSpec, int heightMeasureSpec) {
 

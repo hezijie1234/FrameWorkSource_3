@@ -7,19 +7,25 @@
     android:orientation="vertical"
     tools:context="com.zijie.customview.MainActivity">
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ViewGroup的初步学习"
         android:onClick="testBaseView1"
         />
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="初步的流式布局"
         android:onClick="testBaseView2"
         />
-    <TextView
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="讲师的流式布局终极版"
+        android:onClick="testFlowOver"
+        />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="测试scollby方法"

@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".TestViewActivity1" />
         <activity android:name=".TestViewActivity2" />
-        <activity android:name=".TestScollByActivity"></activity>
+        <activity android:name=".TestScollByActivity" />
+        <activity android:name=".TestViewActivity3"></activity>
     </application>
 
 </manifest>
