@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     public void testBaseView1(View view) {
@@ -27,5 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void testFlowOver(View view) {
         startActivity(new Intent(this,TestViewActivity3.class));
+    }
+
+    public void testCanvas(View view) {
+        startActivity(new Intent(this,CanvasDemoActivity.class));
     }
 }
