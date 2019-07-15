@@ -1,1 +1,1 @@
-include ':app', ':customview', ':animationdemo', ':animationdemo01'
+include ':app', ':aidlclient'

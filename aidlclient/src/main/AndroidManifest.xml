@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zijie.frameworksource">
+    package="com.zijie.aidlclient">
 
     <application
         android:allowBackup="true"
@@ -16,14 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".AIDLService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.zijie.frameworksource.action"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-            </intent-filter>
-        </service>
     </application>
 
 </manifest>
