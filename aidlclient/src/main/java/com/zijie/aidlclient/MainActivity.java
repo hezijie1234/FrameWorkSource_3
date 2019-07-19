@@ -16,6 +16,9 @@ import com.zijie.frameworksource.BookController;
 
 import java.util.List;
 
+/**
+ * 参考：https://www.jianshu.com/p/29999c1a93cd
+ */
 public class MainActivity extends AppCompatActivity {
 
     private BookController bookController;
