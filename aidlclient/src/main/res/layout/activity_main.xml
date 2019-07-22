@@ -6,15 +6,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.zijie.aidlclient.MainActivity">
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="获取书籍列表"
-    android:onClick="getBookList"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="添加书籍到列表"
-        android:onClick="addBook"/>
+        android:onClick="getBookList"
+        android:text="获取书籍列表" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addBook"
+        android:text="添加书籍到列表" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addBookIn"
+        android:text="添加书籍到列表" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="addBookOut"
+        android:text="添加书籍到列表" />
 </LinearLayout>

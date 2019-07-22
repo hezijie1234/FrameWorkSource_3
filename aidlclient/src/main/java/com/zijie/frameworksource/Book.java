@@ -8,6 +8,9 @@ import android.os.Parcelable;
  */
 
 public class Book implements Parcelable {
+    public Book() {
+    }
+
     private String name;
 
     public Book(String name) {

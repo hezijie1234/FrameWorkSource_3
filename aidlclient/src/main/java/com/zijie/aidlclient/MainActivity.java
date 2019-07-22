@@ -67,7 +67,23 @@ public class MainActivity extends AppCompatActivity {
 
     public void addBook(View view) {
         try {
-            bookController.addBookInOut(new Book("这是来自于服务器的一本书"));
+            bookController.addBookInOut(new Book("这是来自于服务器的一本书InOut"));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addBookIn(View view) {
+        try {
+            bookController.addBookInOut(new Book("这是来自于服务器的一本书In"));
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void addBookOut(View view) {
+        try {
+            bookController.addBookInOut(new Book("这是来自于服务器的一本书Out"));
         } catch (RemoteException e) {
             e.printStackTrace();
         }
