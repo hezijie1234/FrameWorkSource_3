@@ -11,8 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="getBookList"
-        android:text="获取书籍列表" />
-
+        android:text="获取客户端的书籍列表" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="getServerBookList"
+        android:text="获取服务端的书籍列表" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,11 +25,26 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="modifyLocalInout"
+        android:text="修改本地的InOut书籍对象" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="addBookIn"
         android:text="添加书籍到列表" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="modifyLocalIn"
+        android:text="修改本地的In书籍对象" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="addBookOut"
         android:text="添加书籍到列表" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="modifyLocalOut"
+        android:text="修改本地的Out书籍对象" />
 </LinearLayout>
