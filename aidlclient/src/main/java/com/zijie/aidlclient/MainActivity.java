@@ -27,11 +27,7 @@ import java.util.List;
  * 对象的参数为空的对象，但是在服务端对接收到的空对象有任何修改之后客户端将会同步变动；inout 为定向 tag 的情况下，服务端将会接收到客户端传来对象的完整信息，
  * 并且客户端将会同步服务端对该对象的任何变动，而反之服务端不能同步客户端对该对象的改动，就是说客户端对某个对象进行修改后，服务端已经获取到的该对象不会同步修改，
  * 反之如果服务器端对该对象进行了修改时，在定向tag为out 和InOut时，客户端的这个对象会进行同步修改。
- ---------------------
- 作者：lypeer
- 来源：CSDN
- 原文：https://blog.csdn.net/luoyanglizi/article/details/51958091
- 版权声明：本文为博主原创文章，转载请附上博文链接！
+
  */
 public class MainActivity extends AppCompatActivity {
 

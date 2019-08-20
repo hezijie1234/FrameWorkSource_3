@@ -4,9 +4,13 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FrameWorkSource_3.iml" filepath="$PROJECT_DIR$/FrameWorkSource_3.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/animationdemo/animationdemo.iml" filepath="$PROJECT_DIR$/animationdemo/animationdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/animationdemo01/animationdemo01.iml" filepath="$PROJECT_DIR$/animationdemo01/animationdemo01.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/genericity/genericity.iml" filepath="$PROJECT_DIR$/genericity/genericity.iml" />
       <module fileurl="file://$PROJECT_DIR$/keepalive/keepalive.iml" filepath="$PROJECT_DIR$/keepalive/keepalive.iml" />
       <module fileurl="file://$PROJECT_DIR$/process/process.iml" filepath="$PROJECT_DIR$/process/process.iml" />
+      <module fileurl="file://$PROJECT_DIR$/socketdemo/socketdemo.iml" filepath="$PROJECT_DIR$/socketdemo/socketdemo.iml" />
     </modules>
   </component>
 </project>
