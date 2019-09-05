@@ -15,6 +15,7 @@
             <option value="$PROJECT_DIR$/genericity" />
             <option value="$PROJECT_DIR$/keepalive" />
             <option value="$PROJECT_DIR$/process" />
+            <option value="$PROJECT_DIR$/reflectdemo" />
             <option value="$PROJECT_DIR$/socketdemo" />
           </set>
         </option>
