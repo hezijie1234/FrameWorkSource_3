@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             collected = false;
         }
     };
+    private Book book;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,12 +104,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void addBook(View view) {
         try {
-            Book book = new Book("这是来自于服务器的一本书InOut");
+            book = new Book("这是来自于服务器的一本书InOut");
             bookList.add(book);
             bookController.addBookInOut(book);
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+    }
+
+    public void modify1(View view) {
+        book.setName("客户端修改了inout的名称后");
     }
 
     public void modifyLocalInout(View view) {
@@ -143,6 +148,7 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
 
 
 }

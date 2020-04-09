@@ -25,6 +25,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="modify1"
+        android:text="修改上面按钮添加到书籍列表的数据"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:onClick="modifyLocalInout"
         android:text="修改本地的InOut书籍对象" />
     <Button
