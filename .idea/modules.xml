@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/2_8_dispatch/2_8_dispatch.iml" filepath="$PROJECT_DIR$/2_8_dispatch/2_8_dispatch.iml" />
       <module fileurl="file://$PROJECT_DIR$/FrameWorkSource_3.iml" filepath="$PROJECT_DIR$/FrameWorkSource_3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/activityhookdemo/activityhookdemo.iml" filepath="$PROJECT_DIR$/activityhookdemo/activityhookdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/aidlclient/aidlclient.iml" filepath="$PROJECT_DIR$/aidlclient/aidlclient.iml" />
       <module fileurl="file://$PROJECT_DIR$/animationdemo/animationdemo.iml" filepath="$PROJECT_DIR$/animationdemo/animationdemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/animationdemo01/animationdemo01.iml" filepath="$PROJECT_DIR$/animationdemo01/animationdemo01.iml" />

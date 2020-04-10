@@ -1,1 +1,1 @@
-include ':app', ':aidlclient', ':keepalive', ':process', ':genericity', ':animationdemo', ':animationdemo01', ':socketdemo', ':reflectdemo'
+include ':app', ':aidlclient', ':keepalive', ':process', ':genericity', ':animationdemo', ':animationdemo01', ':socketdemo', ':reflectdemo',':activityhookdemo', ':2_8_dispatch'
