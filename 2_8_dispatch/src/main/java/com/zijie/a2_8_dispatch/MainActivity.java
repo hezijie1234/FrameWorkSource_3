@@ -44,4 +44,8 @@ public class MainActivity extends AppCompatActivity {
         MyPagerAdapter adapter = new MyPagerAdapter(this, strings);
         pager.setAdapter(adapter);
     }
+
+    public void scrollDispatchClick(View view) {
+        startActivity(new Intent(this,ScrollDispatchActivity.class));
+    }
 }
